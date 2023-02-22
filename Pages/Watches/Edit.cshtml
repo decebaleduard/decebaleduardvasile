@@ -1,0 +1,70 @@
+﻿@page
+@model decebaleduard.Pages.Watches.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Watch</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Watch.Id" />
+            <div class="form-group">
+                <label asp-for="Watch.Brand" class="control-label"></label>
+                <input asp-for="Watch.Brand" class="form-control" />
+                <span asp-validation-for="Watch.Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.Model" class="control-label"></label>
+                <input asp-for="Watch.Model" class="form-control" />
+                <span asp-validation-for="Watch.Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.RefNr" class="control-label"></label>
+                <input asp-for="Watch.RefNr" class="form-control" />
+                <span asp-validation-for="Watch.RefNr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.Year" class="control-label"></label>
+                <input asp-for="Watch.Year" class="form-control" />
+                <span asp-validation-for="Watch.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.Price" class="control-label"></label>
+                <input asp-for="Watch.Price" class="form-control" />
+                <span asp-validation-for="Watch.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.Description" class="control-label"></label>
+                <input asp-for="Watch.Description" class="form-control" />
+                <span asp-validation-for="Watch.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.Gender" class="control-label"></label>
+                <input asp-for="Watch.Gender" class="form-control" />
+                <span asp-validation-for="Watch.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Watch.StoreID" class="control-label"></label>
+                <select asp-for="Watch.StoreID" class="form-control" asp-items="ViewBag.StoreID"></select>
+                <span asp-validation-for="Watch.StoreID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
